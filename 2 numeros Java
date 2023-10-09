@@ -1,0 +1,54 @@
+/******************************************************************************
+“ 2 numeros Java”
+Nombre: Elisa Michelle Medina Vázquez 
+Fecha: 190922
+*******************************************************************************/
+
+import  java.io.*;
+public class Menu{
+    
+	public static void main (String args[]) throws IOException, Exception{
+	    
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+ 
+		System.out.println("");
+		System.out.println("1. Suma");
+		System.out.println("2. Resta");
+		System.out.println("3. Multiplicacion");
+		System.out.println("4. Division");
+		System.out.print("selecciona una opcion del menu e introduce los valores correspondientes: ");
+		int x = Integer.parseInt(br.readLine());
+		System.out.print("valor 1: ");		
+		int v1 = Integer.parseInt(br.readLine());
+		System.out.print("valor 2: ");
+		int v2 = Integer.parseInt(br.readLine());
+		int res = 0;
+		switch (x)
+		{
+			case 1:
+				res = v1 + v2;
+				System.out.println("Resultado: " + res);
+				break;
+			case 2:
+				res = v1 - v2;
+				System.out.println("Resultado: " + res);
+				break;
+			case 3:
+				res = v1 * v2;
+				System.out.println("Resultado: " + res);
+				break;
+			case 4:
+				try{
+					res = v1 / v2;
+				}catch(Exception e){
+					throw new Exception("Estas dividiendo entre cero...");
+				}
+				System.out.println("Resultado: " + res);
+				break;
+			default:
+				System.out.println("Selecciones una operacion que de encuentre disponible");
+				break;
+		}		
+	}
+}
